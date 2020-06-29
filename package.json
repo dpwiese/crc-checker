@@ -1,0 +1,21 @@
+{
+  "name": "crc-utils",
+  "version": "1.0.0",
+  "description": "generate crc from hex",
+  "main": "crc-utils.ts",
+  "devDependencies": {
+    "@babel/core": "^7.10.0",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1",
+    "@types/jest": "^26.0.3",
+    "babel-jest": "^26.1.0",
+    "babel-plugin-rewire": "^1.2.0",
+    "lodash.isequal": "^4.5.0",
+    "rewire": "^5.0.0"
+  },
+  "scripts": {
+    "test": "jest --config jest.config.json ./src/crc-utils.spec.ts"
+  },
+  "author": "Daniel Wiese",
+  "license": "MIT"
+}

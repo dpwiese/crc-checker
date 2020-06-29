@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <p>Enter your payload here in Hex:</p>
+    <form action="./crc-checker.html">
+      <input id="messageInput" type="text" name="Message">
+      <input type="submit">
+    </form>
+    <p>CRC-32 (little endian): <span id="outputLittle"></span></p>
+    <p>CRC-32 (big endian): <span id="outputBig"></span></p>
+  </body>
+
+  <script src="built/crc-utils.js"></script>
+
+  <script type="text/javascript">
+    window.onload = function() {
+      // Get query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const messageValue = urlParams.get('Message');
+
+      // Calculate CRC-32
+      const hexString = conditionHexString(messageValue);
+      const outputValueBig = calcCrc32(hexString).toString(16).toUpperCase();
+      const outputValueLittle = changeEndianness(outputValueBig);
+
+      // Set form input values
+      const messageInput = document.getElementById("messageInput");
+      messageInput.value = messageValue;
+
+      // Set output values
+      const outputLittle = document.getElementById("outputLittle");
+      const outputBig = document.getElementById("outputBig");
+      outputLittle.innerHTML = outputValueLittle;
+      outputBig.innerHTML = outputValueBig;
+    };
+  </script>
+</html>
+
+
+
+
+

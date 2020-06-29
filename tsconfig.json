@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./built",
+    "target": "es2015",
+    "module": "none",
+    "removeComments": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include" :[
+    "./src/crc-utils.ts"
+  ]
+}
